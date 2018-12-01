@@ -26,8 +26,8 @@ def group_npys(write_dir, read_dir, gender_label):
 	else:
 		write_path = write_dir + 'all_male_'
 
-	np.save(write_path + 'feats' +  '.npy', result_feats, result_feats)
-	np.save(write_path + 'labels' +  '.npy', result_feats, result_feats)
+	np.save(write_path + 'feats' +  '.npy', result_feats)
+	np.save(write_path + 'labels' +  '.npy', result_labels)
 
 
 
