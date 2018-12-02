@@ -2,7 +2,7 @@
 tensorflow practice 
 Grant Spellman
 
-Matroid 12/1/2018
+12/1/2018
 
 Below is a brief outline of the steps I took to accomplish the task. The final tensorflow for doing gender classification on image features extracted from [2] can be found in the directory ./model_1e-05_20_0.25/best_model. It can be by calling tf.saved_model.loader.load(...) with that directory.
 
@@ -27,24 +27,19 @@ see: gender_classifier.py
 
 With my trained model, I visualized my results in viz_results.ipynb. I have included viz_results.html so you can easily review some of the metrics I included to verify my model performance. 
 
+Note: My scripts assume some parent directories that contain the converted VGG model and the entire dataset. See file path constants for each script.
+
+Note: I tried to combine the two frozen tf models to have a final end to end gender classifier pipeline, but I really struggled to get this to work. My attempts are in combine_models.py, and I used the below list of sites in my search. 
 
 https://blog.konpat.me/tf-connecting-two-graphs-together/
-
-
-
-
-
-
-
-
-
-
-
-
-
+https://github.com/tensorflow/models/issues/1988
+https://github.com/tensorflow/tensorflow/issues/20825
+https://stackoverflow.com/questions/51881957/deploy-pre-trained-inception-in-tensorflowserving-fails-savedmodel-has-no-varia
+https://stackoverflow.com/questions/42858785/connect-input-and-output-tensors-of-two-different-graphs-tensorflow
 
 
 References
 
 [1] https://github.com/Microsoft/MMdnn/tree/master/mmdnn/conversion/tensorflow
+
 [2] http://www.robots.ox.ac.uk/~vgg/software/vgg_face/  
