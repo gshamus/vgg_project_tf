@@ -4,7 +4,7 @@ Grant Spellman
 
 Matroid 12/1/2018
 
-Below is a brief outline of the steps I took to accomplish the task.
+Below is a brief outline of the steps I took to accomplish the task. The final tensorflow for doing gender classification on image features extracted from [2] can be found in the directory ./model_1e-05_20_0.25/best_model. It can be by calling tf.saved_model.loader.load(...) with that directory.
 
 
 1) Convert the VGG model in caffe to a tensorflow model.
@@ -23,9 +23,12 @@ Using these image features, I trained a simple 3 FC layer model to do binary cla
 
 see: gender_classifier.py
 
-4) Results visualization 
+4) Results visualization and evaluation
 
-With my trained model, I visualized my results in 
+With my trained model, I visualized my results in viz_results.ipynb. I have included viz_results.html so you can easily review some of the metrics I included to verify my model performance. 
+
+
+https://blog.konpat.me/tf-connecting-two-graphs-together/
 
 
 
@@ -44,3 +47,4 @@ With my trained model, I visualized my results in
 References
 
 [1] https://github.com/Microsoft/MMdnn/tree/master/mmdnn/conversion/tensorflow
+[2] http://www.robots.ox.ac.uk/~vgg/software/vgg_face/  

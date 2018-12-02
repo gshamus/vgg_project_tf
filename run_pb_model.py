@@ -10,14 +10,19 @@ import matplotlib.pyplot as plt
 import numpy as np
 import time
 
+""" 
+Script loads model from 'model_file_path', and extracts features from that model 
+at the node 'feature_tensor_name'. Input images read from paths in below txt files.
+Writes these features to the gender write dirs. 
+
+Note: Images are upsampled by factor 1.75 to match model input size
+"""
 
 model_file_path ='../tf_model_info/tf_out/'
 male_files_path = './all_male_paths.txt'
 male_write_dir = './feature_data/male/'
 female_write_dir = './feature_data/female/'
 female_files_path = './all_female_paths.txt'
-input_tensor_name = 'input:0'
-feature_tensor_name = 'Flatten_2/flatten/Reshape:0'
 
 with tf.Session(graph=tf.Graph()) as sess:
     tf.saved_model.loader.load(sess, [tf.saved_model.tag_constants.TRAINING], model_file_path)

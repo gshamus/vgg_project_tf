@@ -6,6 +6,14 @@ import sys
 FEATURE_DIM = 4096
 
 def group_npys(write_dir, read_dir, gender_label):
+	""" takes all (npy) files in read_dir and groups them into one numpy array
+
+	:param read_dir: directory to read npy files from
+    :param write_dir: directory to write final np array
+	:param gender_label: flag to map gender to one hot labels
+
+	:rtype: None, only writes result to write_dir
+	"""
 	file_paths = [os.path.join(read_dir, x) for x in os.listdir(read_dir)]
 
 	result_feats = np.zeros((len(file_paths), FEATURE_DIM))

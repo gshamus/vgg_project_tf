@@ -24,6 +24,13 @@ H2 = 128
 H3 = 2
 
 def train_model(train, val, test, write_dir):
+    """ trains model on train set, writes best model to write_dir and returns training loss curves
+    
+    :param train, val, test: tupled numpy arrays of (feats, labels)
+    :param write_dir: directory to save model to 
+
+    :type: three lists representing training history
+    """
     train_set = tf.data.Dataset.from_tensor_slices(train).repeat().batch(batch_size).prefetch(batch_size)
 
     with tf.name_scope("inputs"):
@@ -117,6 +124,7 @@ def main():
 
     feat_train, feat_test, label_train, label_test =  train_test_split(feats, labels, test_size = .3 , shuffle = False)
     feat_val, feat_test, label_val, label_test = train_test_split(feat_test, label_test, test_size = .5, shuffle = False)
+    print(sum(feat_train[0, :]))
 
     print("start train")
     write_dir = './model_' + str(lr) + "_" + str(epochs) + "_" + str(drop_p) + "/" 

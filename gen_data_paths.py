@@ -8,7 +8,7 @@ def write_list_to_file(path_list, filename):
 			f.write("%s\n" % path)
 
 def main():
-	data_dir = '/mnt/c/Users/Grant/matroid_challenge/agegender_cleaned/combined/aligned/'
+	data_dir = '../agegender_cleaned/combined/aligned/'
 
 	all_sub_dirs = os.listdir(data_dir)
 	male_paths = []
