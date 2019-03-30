@@ -1,6 +1,6 @@
 import os
 import sys
-
+# Script for creating path file names
 
 def write_list_to_file(path_list, filename):
 	with open(filename, 'w') as f:
@@ -15,7 +15,7 @@ def main():
 	female_paths = []
 	for sub_dir in all_sub_dirs:
 		data_sub_dir = os.path.join(data_dir, sub_dir)
-		
+
 		age = int(sub_dir.split('_')[0])
 		gender = data_sub_dir[-1]
 
