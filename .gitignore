@@ -1,2 +1,4 @@
 #ignore feature data folder
 feature_data/
+model_1e-05_20_0.25/
+.ipynb_checkpoints
